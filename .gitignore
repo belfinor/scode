@@ -1,0 +1,5 @@
+scode
+*.json
+*.pid
+*.log
+data
