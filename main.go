@@ -43,7 +43,7 @@ func main() {
 
     ldb.Init( &cfg.Database )
 
-    //http.HandleFunc( "/go_stats/weight", handlerWeight )
+    http.HandleFunc( "/get", handleGet )
 
     log.Info( "start http server addr=" + cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port) )
     http.ListenAndServe( cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port), nil)
