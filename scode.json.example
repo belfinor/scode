@@ -1,0 +1,22 @@
+{
+    "daemon": {
+        "pid": "scode.pid",
+        "dir": "."
+    },
+    "log": {
+        "template": "scode-%Y%m%d.log",
+        "period":   86400,
+        "save":     15,
+        "level":    "info"
+    },
+    "database": {
+      "path": "data",
+      "filesize": 16,
+      "compression": true
+    },
+    "server": {
+        "host":"",
+        "port":8080
+    }
+}
+
