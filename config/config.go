@@ -2,15 +2,14 @@ package config
 
 
 // @author  Mikhail Kirillov <mikkirillov@yandex.ru>
-// @version 1.000
-// @date    2018-04-26
+// @version 1.001
+// @date    2018-04-27
 
 
 import (
   "github.com/belfinor/Helium/daemon"
   "github.com/belfinor/Helium/db/ldb"
   "github.com/belfinor/Helium/log"
-  "github.com/belfinor/Helium/net/jsonrpc2"
   "encoding/json"
   "fmt"
   "io/ioutil"
@@ -20,7 +19,10 @@ import (
 type Config struct {
   Daemon   daemon.Config `json:"daemon"`
   Log      log.Config `json:"log"`
-  Server   jsonrpc2.HttpConfig  `json:"server"`
+  Server   struct {
+    Host string `json:"host"`
+    Port int    `json:"port"`
+  }  `json:"server"`
   Database ldb.Config `json:"database"`
 }
 

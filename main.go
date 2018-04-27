@@ -12,6 +12,8 @@ import (
     "github.com/belfinor/Helium/db/ldb"
     "github.com/belfinor/Helium/log"
     "github.com/belfinor/scode/config"
+    "net/http"
+    "strconv"
 )
 
 
@@ -41,5 +43,9 @@ func main() {
 
     ldb.Init( &cfg.Database )
 
+    //http.HandleFunc( "/go_stats/weight", handlerWeight )
+
+    log.Info( "start http server addr=" + cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port) )
+    http.ListenAndServe( cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port), nil)
 }
 
