@@ -44,6 +44,7 @@ func main() {
     ldb.Init( &cfg.Database )
 
     http.HandleFunc( "/get", handleGet )
+    http.HandleFunc( "/set", handleSet )
 
     log.Info( "start http server addr=" + cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port) )
     http.ListenAndServe( cfg.Server.Host + ":" + strconv.Itoa(cfg.Server.Port), nil)
